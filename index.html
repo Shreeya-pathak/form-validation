@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Validation with Custom Messages</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 30px auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input.error {
+      border-color: red;
+      background-color: #ffe6e6;
+    }
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 3px;
+      display: none;
+    }
+    .error-message.active {
+      display: block;
+    }
+    button {
+      padding: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <form id="registrationForm" novalidate>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <div class="error-message" id="nameError">Please enter your name.</div>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+      <div class="error-message" id="emailError">Please enter a valid email.</div>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" />
+      <div class="error-message" id="passwordError">
+        Password must be at least 6 characters.
+      </div>
+    </div>
+
+    <div>
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate" />
+      <div class="error-message" id="birthdateError">Please select your birthdate.</div>
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script src="form-validation.js"></script>
+
+</body>
+</html>
